@@ -49,4 +49,21 @@ class BallSimulator:
             ball.draw()
 
 
+num_balls = int(input("Number of balls to simulate: "))
+turtle.speed(0)
+turtle.tracer(0)
+turtle.hideturtle()
+canvas_width, canvas_height = turtle.screensize()
+ball_radius = 0.05 * canvas_width
+turtle.colormode(255)
+
+simulator = BallSimulator(canvas_width, canvas_height, ball_radius, num_balls)
+
+while True:
+    turtle.clear()
+    simulator.update_balls()
+    simulator.draw_balls()
+    turtle.update()
+
+
 
