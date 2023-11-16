@@ -43,3 +43,10 @@ class BallSimulator:
     def update_balls(self):
         for ball in self.balls:
             ball.move_circle(self.canvas_width, self.canvas_height)
+
+    def draw_balls(self):
+        for ball in self.balls:
+            ball.draw()
+
+
+
