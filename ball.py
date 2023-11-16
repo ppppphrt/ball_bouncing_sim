@@ -32,3 +32,14 @@ class Ball:
         turtle.begin_fill()
         turtle.circle(self.radius)
         turtle.end_fill()
+
+
+class BallSimulator:
+    def __init__(self, canvas_width, canvas_height, ball_radius, num_balls):
+        self.canvas_width = canvas_width
+        self.canvas_height = canvas_height
+        self.balls = [Ball(canvas_width, canvas_height, ball_radius) for _ in range(num_balls)]
+
+    def update_balls(self):
+        for ball in self.balls:
+            ball.move_circle(self.canvas_width, self.canvas_height)
