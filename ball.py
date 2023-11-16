@@ -23,3 +23,12 @@ class Ball:
         # if the ball hits the ceiling or the floor, reverse the vy velocity
         if abs(self.ypos + self.vy) > (canvas_height - self.radius):
             self.vy = -self.vy
+
+    def draw(self):
+        turtle.penup()
+        turtle.goto(self.xpos, self.ypos - self.radius)
+        turtle.pendown()
+        turtle.color(self.color)
+        turtle.begin_fill()
+        turtle.circle(self.radius)
+        turtle.end_fill()
